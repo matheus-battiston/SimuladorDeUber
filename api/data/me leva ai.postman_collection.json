@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "108228c8-e0c8-4bcd-976e-e921eb6c6992",
+		"name": "me leva ai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listar passageiros habilitados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passageiros/habilitados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"habilitados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "solicitar corrida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"inicioX\": -29.788076400756836,\r\n    \"inicioY\": -51.14272689819336,\r\n    \"finalX\": -29.769399642944336,\r\n    \"finalY\": -51.145877838134766\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passageiros/1/solicitar-corrida",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"1",
+						"solicitar-corrida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "incluir passageiro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Laura da Silva\",\r\n    \"cpf\": \"90217328075\",\r\n    \"dataNascimento\": \"1985-07-24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passageiros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "incluir motorista",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Andre Matos Muller\",\r\n    \"dataNascimento\": \"1980-10-10\",\r\n    \"cpf\": \"52158716045\",\r\n    \"habilitacaoNumero\": \"06359890989\",\r\n    \"habilitacaoCategoria\": \"B\",\r\n    \"habilitacaoDataVencimento\": \"2030-10-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/motoristas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"motoristas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "incluir veiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"placa\": \"BRA2R25\",\r\n    \"modelo\": \"HB20\",\r\n    \"cor\": \"Prata\",\r\n    \"fotoUrl\": \"https://fotos.jornaldocarro.estadao.com.br/wp-content/uploads/2022/08/05132152/NOVO-HB20-2-scaled.jpg\",\r\n    \"proprietarioId\": \"7\",\r\n    \"categoria\": \"B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/veiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "depositar creditos passageiro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valorDeposito\": \"500\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passageiros/1/depositar-creditos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"1",
+						"depositar-creditos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sacar saldo motorista",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valorSaque\": \"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/motoristas/2/sacar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"motoristas",
+						"2",
+						"sacar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "avaliar motorista",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idDaCorrida\": 1,\r\n    \"nota\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passageiros/avaliar-motorista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"avaliar-motorista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "iniciar corrida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/motoristas/1/iniciar-corrida/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"motoristas",
+						"1",
+						"iniciar-corrida",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finalizar corrida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/motoristas/1/finalizar-corrida/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"motoristas",
+						"1",
+						"finalizar-corrida",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "avaliar passageiro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idDaCorrida\": 1,\r\n    \"nota\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/motoristas/avaliar-passageiro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"motoristas",
+						"avaliar-passageiro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar todos os motoristas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/motoristas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"motoristas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar todos os passageiros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passageiros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detalhar motorista",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/motoristas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"motoristas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detalhar passageiro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passageiros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detalhar corrida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/corridas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"corridas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
